@@ -10,3 +10,5 @@ venv/
 
 # Archivos de configuración con credenciales o secretos
 *.env
+
+.vscode

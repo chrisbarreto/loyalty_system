@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
         # Apps del trabajo practivo
-    'clientes',  # Agrega tu aplicación 'clientes'
+    'clientes',
     'rest_framework',  # Agrega Django REST Framework para manejar las APIs
+    'conceptos',
+    'reglas',
+    'vencimientos',
 ]
 
 MIDDLEWARE = [

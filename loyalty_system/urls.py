@@ -26,4 +26,6 @@ urlpatterns = [
     path('api/', include('bolsaPuntos.urls')),
     path('api/', include('usoPuntos.urls')),  # Registrar la app 'usoPuntos'
     path('api/', include('consultas.urls')),
+    path('automatizacion/', include('automatizacion.urls')),
+
 ]

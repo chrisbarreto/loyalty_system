@@ -28,7 +28,7 @@ class UsoPuntosCabeceraViewSet(viewsets.ModelViewSet):
                 concepto_uso=concepto_uso
             )
 
-            puntos_a_usar = puntaje_requerido
+            puntos_a_usar = int(puntaje_requerido)
             for bolsa in bolsas:
                 if puntos_a_usar <= 0:
                     break

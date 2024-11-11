@@ -2,6 +2,10 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import BolsaPuntos
 from .serializers import BolsaPuntosSerializer
+import schedule
+import time
+from datetime import date
+
 
 class BolsaPuntosViewSet(viewsets.ModelViewSet):
     queryset = BolsaPuntos.objects.all()
@@ -14,3 +18,20 @@ class BolsaPuntosViewSet(viewsets.ModelViewSet):
         if cliente_id is not None:
             queryset = queryset.filter(cliente__id=cliente_id)
         return queryset
+
+
+def controlarBolsas():
+    bolsas=BolsaPuntos.objects.all()
+    fecha_hoy=date.today()
+
+    for bolsa in bolsas:
+        if bolsa.fecha_caducidad<fecha_hoy:
+            BolsaPuntos.objects.filter(id=bolsa.pk).delete()
+            #print(bolsa)
+
+
+schedule.every().day.at("17:45").do(controlarBolsas)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'vencimientos',
     'bolsaPuntos',
     'usoPuntos',
+    'consultas',
 ]
 
 MIDDLEWARE = [

@@ -11,8 +11,8 @@ def controlarBolsas():
     fecha_hoy=date.today()
 
     for bolsa in bolsas:
-        if bolsa.fecha_caducidad>fecha_hoy:
-           # BolsaPuntos.objects.filter(id=bolsa.pk).delete()
+        if bolsa.fecha_caducidad<fecha_hoy:
+           # BolsaPuntos.objectfilter(id=bolsa.pk).delete()
             print(bolsa)
 
 def arrancar(request):

@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'consultas',
     'servicios',
     'niveles',
-    'beneficios'
+    'beneficios',
+    'promociones'
 ]
 
 MIDDLEWARE = [

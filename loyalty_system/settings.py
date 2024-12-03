@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'usoPuntos',
     'consultas',
     'servicios',
+    'niveles',
+    'beneficios'
 ]
 
 MIDDLEWARE = [

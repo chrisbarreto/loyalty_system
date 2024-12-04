@@ -55,7 +55,7 @@ class SimularPagoView(APIView):
 
         # Paso 5: Responder con los resultados del proceso simulado
         return Response({
-            "mensaje": "Pago simulado con éxito y puntos acumulados",
+            "mensaje": "Pago realizado con éxito y puntos acumulados",
             "cliente": cliente_id,
             "puntos_acumulados": puntos_a_asignar,
             "monto_operacion": monto,

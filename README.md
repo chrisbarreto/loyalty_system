@@ -14,7 +14,13 @@
 #### a. Segmentación de Clientes:
 
 Para probar correctamente se debe crear primero el o los cliente/s:
+
 link: http://127.0.0.1:8000/api/clientes/
+
+Luego de crear el cliente, se debe crear el o los criterios para la segmentación, está configurado para que sea por rango de edad. Para ello se solicita una descripción, la edad mínima y máxima:
+
+link: http://127.0.0.1:8000/api/segmentacion/criterios/
+
 
 #### b. Niveles de Fidelización:
 

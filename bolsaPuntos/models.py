@@ -12,6 +12,15 @@ class BolsaPuntos(models.Model):
     saldo_puntos = models.PositiveIntegerField(default=0)
 
     monto_operacion = models.DecimalField(max_digits=10, decimal_places=2)
+    
+    # Definir opciones de método de pago
+    METODOS_PAGO = [
+        ('Efectivo', 'Efectivo'),
+        ('Web', 'Web'),
+        ('Tarjeta de Crédito', 'Tarjeta de Crédito'),
+        ('App Móvil', 'App Móvil'),
+    ]
+    metodo_pago = models.CharField(max_length=50, choices=METODOS_PAGO, default='Efectivo')
 
     def save(self, *args, **kwargs):
         # Asegurarse de que el saldo de puntos no sea negativo y esté actualizado antes de guardar

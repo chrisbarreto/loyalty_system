@@ -5,7 +5,7 @@ from datetime import date
 class BolsaPuntosSerializer(serializers.ModelSerializer):
     class Meta:
         model = BolsaPuntos
-        fields = ['id', 'cliente', 'fecha_asignacion', 'fecha_caducidad', 'puntaje_asignado', 'puntaje_utilizado', 'saldo_puntos', 'monto_operacion']
+        fields = ['id', 'cliente', 'fecha_asignacion', 'fecha_caducidad', 'puntaje_asignado', 'puntaje_utilizado', 'saldo_puntos', 'monto_operacion','metodo_pago']
         read_only_fields = ['fecha_asignacion', 'saldo_puntos']
     
     def validate_fecha_caducidad(self, value):

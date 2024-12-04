@@ -1,5 +1,4 @@
 from django.db import models
-from .models import UsoPuntos
 
 class UsoPuntos(models.Model):
     puntaje_utilizado = models.IntegerField()

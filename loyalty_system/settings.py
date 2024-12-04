@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'beneficios',
     'promociones',
     'gamificacion',
-    'dashboard'
+    'dashboard',
+    'segmentacion',
 ]
 
 MIDDLEWARE = [

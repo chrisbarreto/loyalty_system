@@ -1,15 +1,16 @@
 from django.shortcuts import render
-from rest_framework import viewsets,status
+from rest_framework import viewsets, status
 from .serializers import ClienteSerializer
 from .models import Cliente
 from bolsaPuntos.models import BolsaPuntos
 from django.utils import timezone
 from rest_framework.response import Response 
+
 # Create your views here.
 
 class ClienteViewSet(viewsets.ModelViewSet):
     queryset = Cliente.objects.all()
-    serializer_class=ClienteSerializer
+    serializer_class = ClienteSerializer
 
     def create(self, request, *args, **kwargs):
         # Crear el nuevo cliente
@@ -37,20 +38,19 @@ class ClienteViewSet(viewsets.ModelViewSet):
                     metodo_pago='Referido'
                 )
 
+                # Asignar puntos de bienvenida al nuevo cliente (solo si fue referido)
+                BolsaPuntos.objects.create(
+                    cliente=nuevo_cliente,
+                    fecha_caducidad=timezone.now() + timezone.timedelta(days=365),
+                    puntaje_asignado=puntos_bienvenida,
+                    puntaje_utilizado=0,
+                    saldo_puntos=puntos_bienvenida,
+                    monto_operacion=0,  # No hay operación de compra asociada
+                    metodo_pago='Bienvenida'
+                )
+
             except Cliente.DoesNotExist:
                 return Response({"error": "Cliente referente no encontrado"}, status=status.HTTP_404_NOT_FOUND)
 
-        # Asignar puntos al nuevo cliente
-        BolsaPuntos.objects.create(
-            cliente=nuevo_cliente,
-            fecha_caducidad=timezone.now() + timezone.timedelta(days=365),
-            puntaje_asignado=puntos_bienvenida,
-            puntaje_utilizado=0,
-            saldo_puntos=puntos_bienvenida,
-            monto_operacion=0,  # No hay operación de compra asociada
-            metodo_pago='Bienvenida'
-        )
-
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-

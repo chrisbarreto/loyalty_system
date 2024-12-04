@@ -24,9 +24,15 @@ link: http://127.0.0.1:8000/api/segmentacion/criterios/
 Para que se identifiquen los clientes cargados que van en cada segmentación o rango de edad, se carga en la tabla de segmentaciones...utilizando el siguiente método (se puede probar desde el shell de python: python manage.py shell):
 
 from segmentacion.models import Segmentacion
+
 Segmentacion.segmentar_por_edad()
 
 Con dicho método se completará automáticamente la tabla
+
+Para la carga de los beneficios que obtiene cada rango de edad o criterio, se cargan en:
+
+link: http://127.0.0.1:8000/api/segmentacion/beneficios/
+
 
 #### b. Niveles de Fidelización:
 

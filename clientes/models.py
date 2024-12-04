@@ -10,6 +10,7 @@ class Cliente(models.Model):
     nacionalidad=models.CharField(max_length=50)
     email=models.CharField(max_length=50)
     fecha_nacimiento=models.DateField()
+    referidor = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, related_name='referidos')
 
     @property
     def nivel(self):

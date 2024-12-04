@@ -56,6 +56,45 @@ O con el módulo 'promociones' correspondiente al ítem 'f'
 
 link: http://localhost:8000/api/promociones/
 
+#### D. Integración con Plataformas de Pago:
+ 
+Pasos para prueba:
+Paso 1 : Crear cliente(POST)
+http://127.0.0.1:8000/api/clientes/
+Ejemplo: 
+{
+   "nombre": “juan”,
+    "apellido": “Perez”,
+    "numero_documento": “123456-1”,
+    "tipo_documento": "RUC",
+    "nacionalidad": "Paraguaya",
+    "email": “juanperez@mail.com",
+    "fecha_nacimiento": "1990-01-30"
+}
+http://127.0.0.1:8000/api/reglas/
+
+Paso 2 : Crear Regla(POST)
+
+  {
+    "limite_inferior": 50000,
+    "limite_superior": 100000,
+    "monto": 60000
+}
+
+http://127.0.0.1:8000/api/realizar_pago/
+
+Paso 3 : Crear Regla(POST)
+{
+  "cliente_id": 3,
+  "monto": 100000,
+  "metodo_pago": “paypal”
+}
+
+Paso adicional: Ver bolsa de Puntos(GET)
+
+http://127.0.0.1:8000/api/bolsapuntos/
+
+
 #### f. Módulo de promociones
 
 link: http://localhost:8000/api/promociones/

@@ -34,5 +34,6 @@ urlpatterns = [
     path('api/', include('gamificacion.urls')),
     path('api/',include('dashboard.urls')),
     path('api/', include('pagos.urls')),
+    path('api/', include('segmentacion.urls')),
 
 ]

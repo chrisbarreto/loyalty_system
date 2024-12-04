@@ -30,5 +30,7 @@ urlpatterns = [
     path('api/servicios/', include('servicios.urls')),
     path('api/', include('niveles.urls')),
     path('api/', include('beneficios.urls')),
-    path('api/', include('promociones.urls'))
+    path('api/', include('promociones.urls')),
+    path('api/', include('gamificacion.urls')),
+    path('api/',include('dashboard.urls')),
 ]

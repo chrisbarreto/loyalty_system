@@ -49,7 +49,9 @@ INSTALLED_APPS = [
     'servicios',
     'niveles',
     'beneficios',
-    'promociones'
+    'promociones',
+    'gamificacion',
+    'dashboard'
 ]
 
 MIDDLEWARE = [

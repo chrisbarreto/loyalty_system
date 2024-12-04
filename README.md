@@ -11,6 +11,11 @@
 - Dafne Aylen Torrez Vera
 - Christian David Barreto Barrios
 
+#### a. Segmentación de Clientes:
+
+Para probar correctamente se debe crear primero el o los cliente/s:
+link: http://127.0.0.1:8000/api/clientes/
+
 #### b. Niveles de Fidelización:
 
 link: http://localhost:8000/api/niveles/

@@ -35,3 +35,14 @@ link: http://localhost:8000/api/promociones/
 #### f. Módulo de promociones
 
 link: http://localhost:8000/api/promociones/
+
+g. Modulo de gamificacion 
+link: http://localhost:8000/api/insignias/
+link: http://localhost:8000/api/desafios/
+link: http://localhost:8000/api/progresos/
+
+j. Modulo de dashboard
+http://localhost:8000/api/dashboard-analitico/
+
+
+

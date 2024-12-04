@@ -34,6 +34,7 @@ Para la carga de los beneficios que obtiene cada rango de edad o criterio, se ca
 link: http://127.0.0.1:8000/api/segmentacion/beneficios/
 
 
+
 #### b. Niveles de Fidelización:
 
 link: http://localhost:8000/api/niveles/

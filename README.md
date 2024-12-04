@@ -104,6 +104,29 @@ link: http://localhost:8000/api/insignias/
 link: http://localhost:8000/api/desafios/
 link: http://localhost:8000/api/progresos/
 
+#### H. Sistema de Referidos 
+Pasos para prueba
+
+Crear un cliente(POST) con el id de cliente referido(debe ser un cliente ya creado en el sistema)
+
+http://localhost:8000/api/clientes/
+Ejemplo
+{
+  "nombre": "lidia",
+  "apellido": "martinez",
+  "numero_documento": "744332",
+  "tipo_documento": "CI",
+  "nacionalidad": "Paraguaya",
+  "email": "lidiatr@mail.com",
+  "telefono": "098222312",
+  "fecha_nacimiento": "1970-05-10",
+  "referido_por": 2  
+}
+
+Ver Bolsa de puntos(GET) para ver los puntos asignados a cliente nuevo y al referido 
+http://localhost:8000/api/bolsapuntos/
+
+
 j. Modulo de dashboard
 http://localhost:8000/api/dashboard-analitico/
 

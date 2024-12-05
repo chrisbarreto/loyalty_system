@@ -33,8 +33,6 @@ Para la carga de los beneficios que obtiene cada rango de edad o criterio, se ca
 
 link: http://127.0.0.1:8000/api/segmentacion/beneficios/
 
-
-
 #### b. Niveles de Fidelización:
 
 link: http://localhost:8000/api/niveles/
@@ -56,79 +54,125 @@ O con el módulo 'promociones' correspondiente al ítem 'f'
 
 link: http://localhost:8000/api/promociones/
 
-#### D. Integración con Plataformas de Pago:
- 
+**Pruebas**
+
+link: https://www.postman.com/mission-administrator-12973138/workspace/pruebas-final
+
+- Ejecutar la colección niveles
+
+- Ejecutar la colección clientes
+
+- Modificar las id de clientes en la colección bolsaPuntos y ejecutar
+
+- Ejecutar la colección beneficios
+
+#### d. Integración con Plataformas de Pago:
+
 Pasos para prueba:
 Paso 1 : Crear cliente(POST)
+
 http://127.0.0.1:8000/api/clientes/
-Ejemplo: 
+
+Ejemplo:
 {
-   "nombre": “juan”,
-    "apellido": “Perez”,
-    "numero_documento": “123456-1”,
-    "tipo_documento": "RUC",
-    "nacionalidad": "Paraguaya",
-    "email": “juanperez@mail.com",
-    "fecha_nacimiento": "1990-01-30"
+"nombre": “juan”,
+"apellido": “Perez”,
+"numero_documento": “123456-1”,
+"tipo_documento": "RUC",
+"nacionalidad": "Paraguaya",
+"email": “juanperez@mail.com",
+"fecha_nacimiento": "1990-01-30"
 }
+
 http://127.0.0.1:8000/api/reglas/
 
 Paso 2 : Crear Regla(POST)
 
-  {
-    "limite_inferior": 50000,
-    "limite_superior": 100000,
-    "monto": 60000
+{
+"limite_inferior": 50000,
+"limite_superior": 100000,
+"monto": 60000
 }
 
 http://127.0.0.1:8000/api/realizar_pago/
 
 Paso 3 : Crear Regla(POST)
+
 {
-  "cliente_id": 3,
-  "monto": 100000,
-  "metodo_pago": “paypal”
+"cliente_id": 3,
+"monto": 100000,
+"metodo_pago": “paypal”
 }
 
 Paso adicional: Ver bolsa de Puntos(GET)
 
 http://127.0.0.1:8000/api/bolsapuntos/
 
+#### e. API
+
+link: http://localhost:8000/api/niveles/
+
+link: http://127.0.0.1:8000/api/clientes/
+
+link: http://localhost:8000/api/beneficios/
+
+**Pruebas**
+
+link: https://www.postman.com/mission-administrator-12973138/pruebas-final
+
+Si no existen registros:
+
+- Ejecutar la colección Niveles
+
+- Ejecutar la colección Beneficios
+
+- Ejecutar la colección Clientes
+
+Para probar la API: Ejecutar la colección API
 
 #### f. Módulo de promociones
 
 link: http://localhost:8000/api/promociones/
 
-g. Modulo de gamificacion 
+**Pruebas**
+
+Ejecutar la colección Niveles
+
+Ejecutar la colección Promociones
+
+#### g. Modulo de gamificacion
+
 link: http://localhost:8000/api/insignias/
+
 link: http://localhost:8000/api/desafios/
+
 link: http://localhost:8000/api/progresos/
 
-#### H. Sistema de Referidos 
+#### h. Sistema de Referidos
+
 Pasos para prueba
 
 Crear un cliente(POST) con el id de cliente referido(debe ser un cliente ya creado en el sistema)
 
 http://localhost:8000/api/clientes/
+
 Ejemplo
 {
-  "nombre": "lidia",
-  "apellido": "martinez",
-  "numero_documento": "744332",
-  "tipo_documento": "CI",
-  "nacionalidad": "Paraguaya",
-  "email": "lidiatr@mail.com",
-  "telefono": "098222312",
-  "fecha_nacimiento": "1970-05-10",
-  "referido_por": 2  
+"nombre": "lidia",
+"apellido": "martinez",
+"numero_documento": "744332",
+"tipo_documento": "CI",
+"nacionalidad": "Paraguaya",
+"email": "lidiatr@mail.com",
+"telefono": "098222312",
+"fecha_nacimiento": "1970-05-10",
+"referido_por": 2  
 }
 
-Ver Bolsa de puntos(GET) para ver los puntos asignados a cliente nuevo y al referido 
+Ver Bolsa de puntos(GET) para ver los puntos asignados a cliente nuevo y al referido
+
 http://localhost:8000/api/bolsapuntos/
 
+#### j. Modulo de dashboard
 
-j. Modulo de dashboard
 http://localhost:8000/api/dashboard-analitico/
-
-
-

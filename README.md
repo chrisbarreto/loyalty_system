@@ -143,10 +143,37 @@ Ejecutar la colección Promociones
 #### g. Modulo de gamificacion
 
 link: http://localhost:8000/api/insignias/
+ejemplo
+{
+     "id": 1,
+     "nombre": "Primera Compra",
+     "descripcion": "Otorgada por realizar la primera compra",
+     "imagen": "ruta_imagen",
+     "puntos_requeridos": 100,
+     "creado_en": "2024-01-01T10:00:00Z"
+}
+
 
 link: http://localhost:8000/api/desafios/
+ejemplo
+{
+    "titulo": "Meta Semanal",
+    "descripcion": "Acumula 500 puntos esta semana",
+    "meta_puntos": 500,
+    "fecha_inicio": "2024-01-01T00:00:00Z",
+    "fecha_fin": "2024-01-07T23:59:59Z"
+}
+
 
 link: http://localhost:8000/api/progresos/
+ejemplo
+{
+    "usuario": 1,  # ID del usuario
+    "desafio": 1,  # ID del desafío
+    "puntos_acumulados": 150,
+    "completado": false
+}
+
 
 #### h. Sistema de Referidos
 
@@ -175,4 +202,6 @@ http://localhost:8000/api/bolsapuntos/
 
 #### j. Modulo de dashboard
 
-http://localhost:8000/api/dashboard-analitico/
+http://localhost:8000/api/dashboard-analitico/ 
+
+

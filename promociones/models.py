@@ -15,9 +15,9 @@ class Promocion(models.Model):
     duracion_dias=models.IntegerField(editable=False)
     nivel=models.ForeignKey(Niveles, on_delete=models.CASCADE, related_name='nivel', blank=True, null=True)
     tipo=models.CharField(max_length=30, choices=TIPO_PROMOCION)
-    descuento=models.DecimalField(max_digits=10,decimal_places=2,null=True,blank=True)
+    descuento=models.DecimalField(max_digits=4,decimal_places=2,null=True,blank=True)
     producto=models.CharField(max_length=100, null=True, blank=True)
-    bonificacion=models.PositiveIntegerField(null=True,blank=True)
+    bonificacion=models.DecimalField(max_digits=3, decimal_places=2,null=True,blank=True)
 
     #Comprueba si la vigencia de la promo
     @property
